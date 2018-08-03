@@ -1,0 +1,144 @@
+@font-face {
+  font-family: Leafy;
+  src: url(../fonts/leafy.otf)
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+
+h1 {
+  position: fixed;
+  z-index: 1000;
+  bottom: -10px;
+  font-size: 2rem;
+  font-family: Raleway;
+}
+
+h1 > .color {
+  background: -webkit-linear-gradient(rgb(136, 64, 110), rgb(151, 15, 90));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Raleway;
+}
+
+.symph {
+  color: #d63031;
+  font-size: 2rem;
+  font-family: Raleway;
+}
+
+#my-canvas {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -100;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+  font-family: Leafy;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ee9ca7, #ffdde1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Clock Face */
+.clock {
+  border-radius: 50%;
+  background: #fff url(../images/clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 45em;
+  position: relative;
+  width: 45em;
+  background-color: inherit;
+}
+
+.clock.simple:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+
+/* Nipple */
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Hour Hand */
+.hours {
+  background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+
+/* Minute hand */
+.minutes {
+  background: #000;
+  height: 30%;
+  left: 49%;
+  position: absolute;
+  top: 20%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+
+/* Second hand */
+.seconds {
+  background: #000;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8;
+}
+
+.minutes-container {
+  transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+}
+.seconds-container {
+  transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}
+/* Timer */
+#CountdownTimer{
+  display:none;
+  font-size: 12rem;
+  font-weight: 800;
+  background: -webkit-linear-gradient(rgb(136, 64, 110), rgb(151, 15, 90));
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.pp {
+  display: none;
+  font-size: 7.5rem;
+}
